@@ -1,16 +1,16 @@
 export const getWeatherData = async () => {
   try {
     const res = await fetch(
-      'https://pub-54904ef3b9374b6c9f80cf1763a31f5b.r2.dev/cc-datas/weather-data.json'
+      "https://pub-54904ef3b9374b6c9f80cf1763a31f5b.r2.dev/cc-datas/weather-data.json",
     );
     if (!res.ok) {
-      console.log('Дата авахад алдаа гарлаа');
+      console.log("Дата авахад алдаа гарлаа");
       return null;
     }
     const data = await res.json();
     return data;
   } catch (error) {
-    console.error('Дата авахад алдаа гарлаа', error);
+    console.error("Дата авахад алдаа гарлаа", error);
     return null;
   }
 };
@@ -63,7 +63,7 @@ const parseWeather = (raw) => {
 
   console.log(getForecastData);
 
-  return currentWeather, weatherForNextThreeDays, getForecastData;
+  return (currentWeather, weatherForNextThreeDays, getForecastData);
 };
 
 const weather = await getWeatherData();
@@ -71,3 +71,4 @@ const weather = await getWeatherData();
 parseWeather(weather);
 
 console.log(parseWeather(weather));
+
